@@ -1,9 +1,9 @@
 
-const db = require('../services/db');
+
 const getDb = require('../services/db');
 
 exports.create = async (req, res) => {
-    const dn = await getDb();
+    const db = await getDb();
     const { name, genre } = req.body;
 
     try {
