@@ -26,6 +26,6 @@ To design and implement an API which can perform CRUD (create, read, update, del
 #### Task list
 
 - [x] setting up database, repo, application.
-- [ ] setting up test environment.
-- [ ] creating and reading artists
+- [x] setting up test environment.
+- [x] creating and reading artists
 - [ ] updating and deleting artists. 
