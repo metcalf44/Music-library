@@ -1,0 +1,13 @@
+
+const express = require('express');
+const artistRouter = require('./routes/artist');
+const app = express();
+
+app.use(express.json());
+app.use('/artist', artistRouter);
+
+app.post('/', (req, res) => {
+    res.status(200).send("hello world")
+});
+
+module.exports = app;
