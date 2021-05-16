@@ -54,7 +54,7 @@ exports.read = async (_, res) => {
      const { artistId } = req.params;
 
      try {
-     const { updatedRows } = await db.query('UPDATE Artist SET ? WHERE id = ?', [
+     const [{ updatedRows }] = await db.query('UPDATE Artist SET ? WHERE id = ?', [
          data,
          artistId
      ]); 
@@ -69,4 +69,25 @@ exports.read = async (_, res) => {
     }
 
     db.close()
+ };
+
+ exports.deleteArtist = async (req, res) => {
+     const db = await getDb();
+     const { artistId } = req.params;
+
+     try {
+         const [{ deletedRow }] = await db.query('DELETE FROM Artist WHERE Id = ?', [
+             artistId
+         ]);
+         
+         if(!deletedRow) {
+             res.sendStatus(404).json('Artist was not deleted');
+         } else {
+             res.sendStatus(200).json(deletedRow)
+         }
+     } catch (err) {
+        res.sendStatus(500).json(err)
+     }
+
+     db.close()
  };

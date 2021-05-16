@@ -24,7 +24,7 @@ describe('update artist', () => {
             ]),
         ]);
 
-        [artist] = await db.query('SELECT * FROM Artist');
+        [artists] = await db.query('SELECT * FROM Artist');
     });
 
     afterEach(async () => {
@@ -33,6 +33,7 @@ describe('update artist', () => {
     });
 
     describe ('./artist/:artistId', () => {
+        
         describe('PATCH', () => {
             it('updates a single artist with the correct id', async () => {
                 const artist = artists[0];

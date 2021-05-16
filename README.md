@@ -9,11 +9,6 @@ Applying what I have learnt about SQL, databases and express.js by writing an ap
 To design and implement an API which can perform CRUD (create, read, update, delete) operations on a database.
 
 ***
-#### Project status
-
-- Starting
-
-***
 #### Tech used
 
 * Node.js
@@ -27,5 +22,6 @@ To design and implement an API which can perform CRUD (create, read, update, del
 
 - [x] setting up database, repo, application.
 - [x] setting up test environment.
-- [x] creating and reading artists
-- [ ] updating and deleting artists. 
+- [x] creating and reading artists.
+- [x] updating and deleting artists.
+- [ ] passes all tests
