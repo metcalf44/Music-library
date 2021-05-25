@@ -1,12 +1,12 @@
 const getDb = require('../services/db');
 
 exports.create = async (req, res) => {
-  const { name, year } = req.body;
   const db = await getDb();
+  const { name, year } = req.body;
   const {artistId} = req.params;
-console.log('*******************',artistId,'*******************')
+
   try {
-    await db.query(`INSERT INTO Album (name, year, artistId) VALUES (?, ?, ?)`, [
+    await db.query('INSERT INTO Album (name, year, artistId) VALUES (?, ?, ?)', [
       name,
       year,
       artistId
@@ -32,7 +32,7 @@ exports.read = async (_, res) => {
   db.close();
 };
 
-exports.albumById = async (req, res) => {
+exports.readById = async (req, res) => {
   const db = await getDb();
   const { albumId } = req.params;
 
@@ -53,9 +53,7 @@ exports.updateAlbum = async (req, res) => {
   const db = await getDb();
   const data = req.body;
   const albumId = req.params.albumId;
-  console.log('*********',req.params.albumId)
   try {
-      
       const [{ affectedRows }] = await db.query(
           'UPDATE Album SET ? WHERE id = ?',
           [data, albumId]

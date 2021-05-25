@@ -12,15 +12,15 @@ describe('update album', () => {
     await Promise.all([
       db.query('INSERT INTO Album (name, year) VALUES (?, ?)', [
         'currents',
-        '2015',
+        2015,
       ]),
       db.query('INSERT INTO Album (name, year) VALUES (?, ?)', [
         'Disco',
-        '2020',
+        2020,
       ]),
       db.query('INSERT INTO Album (name, year) VALUES (?, ?)', [
         'Time out',
-        '1959',
+        1959,
       ]),
     ]);
 
@@ -38,7 +38,7 @@ describe('update album', () => {
         const album = albums[0];
         const res = await request(app)
           .patch(`/album/${album.id}`)
-          .send({ name: 'new name', year: 'new year' });
+          .send({ name: 'new name', year: 2015 });
 
         expect(res.status).to.equal(200);
 

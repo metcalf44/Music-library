@@ -12,19 +12,19 @@ describe('read album', () => {
     await Promise.all([
       db.query('INSERT INTO Album (name, year) VALUES(?, ?)', [
         'Currents',
-        '2015',
+        2015,
       ]),
       db.query('INSERT INTO Album (name, year) VALUES(?, ?)', [
         'Disco',
-        '2020',
+        2020,
       ]),
       db.query('INSERT INTO Album (name, year) VALUES(?, ?)', [
         'Time out',
-        '1959',
+        1959,
       ]),
     ]);
 
-    [artists] = await db.query('SELECT * FROM Album');
+    [albums] = await db.query('SELECT * FROM Album');
   });
 
   afterEach(async () => {

@@ -12,15 +12,15 @@ describe('delete album', () => {
     await Promise.all([
         db.query('INSERT INTO Album (name, year) values (?, ?)', [
             'Currents',
-            '2015',
+            2015,
         ]),
         db.query('INSERT INTO Album (name, year) values (?, ?)', [
             'Disco',
-            '2020',
+            2020,
         ]),
         db.query('INSERT INTO Album (name, year) values (?, ?)', [
             'Time out',
-            '1959',
+            1959,
         ]),
     ]);
 
