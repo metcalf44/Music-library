@@ -24,22 +24,24 @@ To design and implement an API which can perform CRUD (create, read, update, del
 
 create a .env and .env.test file in the root folder
 
+```
 DB_PASSWORD=password
 DB_NAME=music_library_dev
 DB_USER=root
 DB_HOST=localhost
 DB_PORT=3307
 PORT=3000
+```
 
 If your using an M1 chip use the following 
-
+```
 DB_PASSWORD=password
 DB_NAME=music_library_dev
 DB_USER=user
 DB_HOST=localhost
 DB_PORT=3307
 PORT=3000
-
+```
 Using $ npm start
 will run the program
 
