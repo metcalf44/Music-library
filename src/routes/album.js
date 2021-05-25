@@ -2,11 +2,9 @@ const express = require('express');
 const albumController = require('../controllers/album');
 const router = express.Router();
 
-router.get('', albumController.read);
-router.get('/album', albumController.read);
-router.get('/album/:albumId', albumController.readById);
+router.get('/', albumController.read);
+router.get('/:albumId', albumController.readById);
 
-router.post('/', albumController.create);
 router.post('/artist/:artistId/album', albumController.create)
 
 router.patch('/:albumId', albumController.updateAlbum);

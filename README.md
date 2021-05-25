@@ -20,10 +20,35 @@ To design and implement an API which can perform CRUD (create, read, update, del
 
 ---
 
+#### running the music library
+
+create a .env and .env.test file in the root folder
+
+DB_PASSWORD=password
+DB_NAME=music_library_dev
+DB_USER=root
+DB_HOST=localhost
+DB_PORT=3307
+PORT=3000
+
+If your using an M1 chip use the following 
+
+DB_PASSWORD=password
+DB_NAME=music_library_dev
+DB_USER=user
+DB_HOST=localhost
+DB_PORT=3307
+PORT=3000
+
+Using $ npm start
+will run the program
+
+---
+
 #### Task list
 
 - [x] setting up database, repo, application.
 - [x] setting up test environment.
 - [x] creating and reading artists.
 - [x] updating and deleting artists.
-- [ ] passes all tests
+- [x] passes all tests
